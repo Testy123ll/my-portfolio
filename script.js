@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault(); // Stop the default form submission
 
       
-        const BACKEND_URL = 'https://my-portfolio-backend-1oun.onrender.com'; 
+        const BACKEND_URL = 'https://my-portfolio-backend-1oun.onrender.com/send-email'; 
        
         
         // --- 2. Data Collection ---
