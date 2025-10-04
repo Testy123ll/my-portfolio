@@ -1,0 +1,11 @@
+# Node dependencies
+node_modules/
+
+# Environment variables (Crucial for security!)
+.env
+
+# Backend folder (Since you are only pushing the frontend to this repo)
+backend/
+
+# Log files
+npm-debug.log*

@@ -1,0 +1,349 @@
+/* Basic Reset and Variables */
+:root {
+    --primary-color: #007BFF; /* Blue accent */
+    --secondary-color: #333; /* Dark text */
+    --background-light: #f4f4f9;
+    --background-dark: #2c3e50; /* Dark section background */
+    --text-light: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--background-light);
+    scroll-behavior: smooth;
+}
+
+/* Navigation Styling */
+/* --- New Global Variables (Optional, but good practice) --- */
+:root {
+    /* ... existing variables ... */
+    --nav-bg: #333; /* Dark background for navbar */
+    --nav-text: white; /* Light text for navbar */
+    --accent-color: #f7b32d; /* For hover effects */
+}
+
+/* --- Navigation Base Styles --- */
+nav {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Keeps the navbar at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- Menu Toggle Button (The Hamburger Icon) --- */
+.menu-toggle {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* --- Navigation Links List --- */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal on desktop */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* ========================================================= */
+/* --- DROPDOWN/MOBILE STYLES (The key change) --- */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    
+    /* Show the hamburger icon */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Make the links list vertical and stack them */
+    .nav-menu-container {
+        display: none; /* Initially hide the menu */
+        position: absolute;
+        top: 100%; /* Position right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Class added by JavaScript when the menu is active */
+    .nav-menu-container.active {
+        display: block; 
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separator line */
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a {
+        display: block; /* Make the whole area clickable */
+        padding: 15px 30px;
+        text-align: left;
+    }
+}
+.profile{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 300px;
+    float: left;
+    padding: 10px;
+}
+
+h2{
+    margin-top: 30px;
+}
+
+ul{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.highlight{
+    font-weight: bold;
+    color: #2b0d46;
+}
+/* Section and Container Styling */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 2rem;
+    min-height: 50vh;
+}
+
+.dark-bg {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+.dark-bg a {
+    color: var(--primary-color);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff;
+    color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+/* ========================================================= */
+/* --- STYLES FOR THE CONTACT LINK BUTTONS --- */
+/* ========================================================= */
+
+/* CSS Variables for easy theme changes within this section
+   You can adjust these to match your main portfolio colors */
+:root {
+    --link-primary-color: #0f95ee; /* A nice steel blue for the CTA */
+    --link-button-bg-color: #886cee;
+    --link-text-color: #333333;
+    --link-border-color: #e0e0e0;
+    --link-border-radius: 30px; /* Highly rounded corners */
+}
+
+.logo1{
+    color: #007BFF;
+}
+/* Container to hold the link buttons */
+.link-page-container {
+    width: 100%;
+    max-width: 400px; /* Max width to keep it centered and readable */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center buttons within this container */
+    gap: 15px; /* Space between the main elements */
+    margin: 0 auto; /* Center the container on the page */
+}
+
+/* --- General Link Button Styles --- */
+.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    color: var(--link-text-color);
+    background-color: var(--link-button-bg-color);
+    padding: 10px 20px;
+    border-radius: var(--link-border-radius);
+    border: 1px solid var(--link-border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.link-button:hover {
+    background-color: #7696d3;
+}
+
+.link-button .icon {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 18px;
+    color: var(--link-text-color);
+}
+
+/* --- Side-by-Side Links (LinkedIn/Facebook) --- */
+.professional-links {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* Space between the two side-by-side buttons */
+}
+
+.professional-links > a,
+.professional-links > span {
+    flex-grow: 1; /* Make the buttons share the available space equally */
+    width: 50%; 
+}
+
+/* Location Button Style (not a link) */
+.location-button {
+    cursor: default;
+}
+
+/* --- Call to Action (CTA) Button for Links Section --- */
+.link-cta-button {
+    display: block; 
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin-top: 25px; /* Space above the main button */
+    border-radius: var(--link-border-radius);
+    
+    /* Primary Style */
+    background-color: var(--link-primary-color);
+    color:  blue; 
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.link-cta-button:hover {
+    background-color: #4a748c; /* Slightly darker shade on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Form and Input Styling */
+#chat-form input, #chat-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Call-to-Action Button */
+.cta-button, #submit-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border: none; /* For the button element */
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover, #submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* FullCalendar Custom Styling */
+/* Makes the calendar look nice in the dark section */
+#calendar {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--text-light); /* White calendar background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.dark-bg #calendar a {
+    color: var(--secondary-color); /* Reset links inside calendar to dark */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--secondary-color);
+    color: var(--text-light);
+}
+
